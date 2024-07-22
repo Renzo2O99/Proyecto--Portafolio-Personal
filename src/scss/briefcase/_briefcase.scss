@@ -1,0 +1,35 @@
+/* Briefcase */
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.briefcase {
+    background-color: v.$color-oscuro-principal;
+    padding-bottom: v.$separacion;
+
+    h2 {
+        padding: 4rem;
+    }
+
+    .briefcase-grid {
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit, minmax(29rem, auto)
+        );
+        gap: 1.5rem;
+        width: 90%;
+        margin: 0 auto;
+
+        img {
+            padding: 1rem;
+            width: 100%;
+            border-radius: 2rem;
+            transition-property: transform;
+            transition: .2s ease;
+            cursor: pointer;
+
+            @include mix.hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

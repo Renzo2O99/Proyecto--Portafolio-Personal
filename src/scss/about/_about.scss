@@ -1,0 +1,44 @@
+/* About */
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.about {
+    background-color: v.$color-oscuro-secundario;
+
+    .about-flex {
+        display: flex;
+        background-color: v.$color-oscuro-secundario;
+        width: 100%;
+        margin: 0 auto;
+        padding: 5rem 0;
+    }
+
+    p {
+        padding-right: 2rem;
+        font-size: 1.5rem;
+        width: 90%;
+        margin: 0 0 0 auto;
+        color: v.$color-secundario;
+        line-height: 2.5;
+        color: v.$color-secundario-light;
+    }
+
+    .social {
+        border-left: v.$color-secundario .5rem solid;
+        padding-right: 5rem;
+        margin-left: .2rem;
+
+        img {
+            width: 6rem;
+            margin: 1rem;
+
+            @include mix.hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    img {
+        height: auto;
+    }
+}

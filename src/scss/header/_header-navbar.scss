@@ -1,0 +1,38 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.header {
+    background-color: v.$color-oscuro-secundario;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    padding: .5rem 0;
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+
+        @include mix.tablet { 
+            justify-content: flex-end;
+        }
+    
+        ul {
+            display: flex;
+            list-style: none;
+    
+            a {
+                font-size: 2rem;
+                margin: 2rem;
+                color: v.$color-secundario;  
+                
+                @include mix.hover {
+                    border-bottom: v.$color-principal solid;
+                }
+            }
+        }
+    }
+}

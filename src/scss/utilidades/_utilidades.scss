@@ -1,0 +1,28 @@
+//* Importaciones:
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+//* Utilidades scss:
+.text-center {
+    text-align: center;
+}
+
+.bg-principal {
+    background-color: v.$color-principal;
+}
+
+.bg-white {
+    background-color: v.$blanco;
+}
+
+.margin-negativo-10 {
+    margin-top: -10rem;
+}
+
+.guion {
+    visibility: hidden;
+
+    @include mix.tablet { 
+        visibility: visible;
+    }
+}

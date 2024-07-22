@@ -1,0 +1,116 @@
+/* Skills */
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+
+.skills {
+    background-color: v.$color-oscuro-principal;
+
+    .skill {
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit, minmax(25rem, auto)
+        );
+        justify-content: center;
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 11rem;
+        gap: 8rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(
+                auto-fit, minmax(30rem, auto)
+            );
+        }
+
+        h2 {
+            padding-bottom: 6rem;
+        }
+
+        img {
+            width: 9rem;
+            cursor: pointer;
+        }
+    }
+
+    .knowledge {
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit, minmax(11rem, auto)
+        );
+        justify-content: center;
+        column-gap: 2.5rem;
+
+    }
+
+    .tools-part{
+        h2 {
+            @media (min-width: 645px) and (max-width: 934px) {
+                margin-bottom: 8rem;
+            }       
+        }
+
+        .tools {
+            @extend .knowledge;
+
+            grid-template-columns: repeat(
+                auto-fit, minmax(7rem, auto)
+            );
+            column-gap: 4rem;
+        }
+    }
+}
+
+/* Tooltip */
+
+.skill {
+    h3 {
+        background-color: v.$color-oscuro-secundario;
+        color: v.$color-principal;
+        text-align: center;
+        border-radius: .5rem;
+        padding: .5rem 0;
+        font-size: 1.1rem;
+        width: 10rem;
+        opacity: 0;
+        transition-property: transform opacity;
+        transition: .4s ease;
+    }
+
+    .dos-palabras {
+        padding: .5rem 1rem;
+    }
+
+    .knowledge {
+        h3 {
+            transform: translate(-.5rem, -10rem);
+        }
+    }
+
+    .tools {
+        h3 {
+            transform: translate(-1rem, -10rem);
+        }
+    }
+
+    .knowledge {
+        div {
+            @include mix.hover {
+                h3 {
+                    transform: translate(-.5rem, -12.5rem);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .tools {
+        div {
+            @include mix.hover {
+                h3 {
+                    transform: translate(-1rem, -12.5rem);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

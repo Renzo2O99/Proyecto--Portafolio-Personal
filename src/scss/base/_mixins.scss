@@ -1,0 +1,37 @@
+@use 'variables' as v;
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin grid($repeat-columns, $gap) {
+    display: grid;
+    grid-template-columns: repeat($repeat-columns, 1fr);
+    gap: $gap;
+}
+
+@mixin child($number) {
+    &:nth-child(#{$number}) {
+        @content
+    }
+}
+
+@mixin hover() {
+    &:hover {
+        @content
+    }
+}

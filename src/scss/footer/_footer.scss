@@ -1,0 +1,12 @@
+/* Footer */
+@use '../base/variables' as v;
+
+.footer {
+    background-color: v.$color-oscuro-secundario;
+    padding: 1rem;
+
+        p {
+            text-align: center;
+            color: v.$color-secundario-light;
+        }
+}

@@ -1,0 +1,62 @@
+//* Importaciones:
+@use 'variables' as v;
+@use '../base/mixins' as mix;
+
+//* Globales
+html {
+    // 1rem == 10px;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    
+    /* Propiedad que nos permite una navegación más suavizada */
+    scroll-behavior: smooth;
+}
+
+/* Propiedad que define la posición en donde se detendrá al alcnazar el ID */
+section[id="project-section"] {
+    scroll-margin-top: 4rem;
+}
+
+section[id="inicio-section"] {
+    scroll-margin-top: 6.5rem;
+}
+
+body {
+    font-family: v.$fuente-principal;
+    font-size: 1.8rem;
+    color: v.$color-secundario;
+    background-color: v.$color-secundario-light;
+}
+
+p {
+    color: v.$negro;
+    font-size: 1.6rem;
+    line-height: 2;
+    margin: 0;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: v.$negro;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

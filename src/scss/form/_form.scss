@@ -1,0 +1,47 @@
+/* Form Modal */
+@use '../base/variables' as v;
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    margin: 0 auto;
+
+    label {
+        margin: 1rem 0 .5rem 0rem;
+        padding: .5rem;
+    }
+}
+
+.form {
+    > label  {
+        > span {
+            margin-left: .5rem;
+        }
+
+        > input {
+            background-color: v.$color-oscuro-secundario;
+            border-radius: 0 1rem 1rem 1rem;
+            padding: 1.5rem 6rem 1.5rem 2rem;
+            color: v.$color-secundario;
+            outline: none;
+            opacity: .7;
+            width: 100%;
+            margin: .5rem 0;
+        }
+
+        > textarea {
+            @extend input;
+            padding: 1.5rem 6rem 10rem 2rem;
+
+        }
+    }
+
+    > button {
+        background-color: v.$color-principal;
+        color: v.$color-secundario;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+}
+
