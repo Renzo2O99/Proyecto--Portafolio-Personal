@@ -25,6 +25,10 @@ section[id="inicio-section"] {
     scroll-margin-top: 6.5rem;
 }
 
+img[alt*="-icon"] {
+    transform: scale(1.1);
+  }
+
 body {
     font-family: v.$fuente-principal;
     font-size: 1.8rem;
