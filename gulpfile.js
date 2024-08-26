@@ -54,6 +54,10 @@ function copyEinsModals(done) {
     .pipe(uglify())
     .pipe(dest('build/js'));
   done();
+
+  return src('node_modules/eins-modal/dist/css/eins-modal.min.css')
+  .pipe(postcss([autoprefixer(), cssnano()]))
+  .pipe(dest('build/css'));
 }
 
 // Función que nos permite compilar en tiempo real el archivo SASS.
