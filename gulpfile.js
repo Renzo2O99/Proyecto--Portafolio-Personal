@@ -7,7 +7,6 @@ const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const cssnano = require('cssnano');
 const plumber = require('gulp-plumber');
-const uglify = require('gulp-uglify');
 
 // Función que nos permite compilar el archivo SASS.
 function css(done) {
@@ -48,18 +47,6 @@ function css(done) {
     done();
 }
 
-// Tarea para copiar y minificar Eins Modals
-function copyEinsModals(done) {
-  src('node_modules/eins-modal/dist/js/eins-modal.min.js')
-    .pipe(uglify())
-    .pipe(dest('build/js'));
-  done();
-
-  return src('node_modules/eins-modal/dist/css/eins-modal.min.css')
-  .pipe(postcss([autoprefixer(), cssnano()]))
-  .pipe(dest('build/css'));
-}
-
 // Función que nos permite compilar en tiempo real el archivo SASS.
 function dev() {
   // La función watch() toma como argumentos dos argumentos:
@@ -72,7 +59,6 @@ function dev() {
 }
 
 exports.css = css;
-exports.copyEinsModals = copyEinsModals;
 exports.dev = dev;
 
 // Con series podemos inicializar múltiples tareas, pero primero debe
@@ -82,4 +68,4 @@ exports.dev = dev;
 // que todas las tareas se ejecutarán al mismo tiempo e irán finalizando en su respectivo orden.
 
 // Tareas por default:
-exports.default = series(css, copyEinsModals, dev);
+exports.default = series(css, dev);
